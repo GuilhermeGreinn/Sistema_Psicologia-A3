@@ -52,25 +52,133 @@ if (isset($_POST['botao']) && $_POST['botao'] == "Cadastrar") {
     }
 }
 ?>
+
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Cadastrar Paciente</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #003366;
+            font-size: 1rem;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #0077cc;
+            outline: none;
+        }
+
+        button {
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #005999;
+        }
+    </style>
+</head>
+
 <body>
-    <form action="#" method="post">
-        Data de Abertura: <input type="date" name="data_abertura" required><br>
-        Nome Completo: <input type="text" name="nome" required><br>
-        Data de Nascimento: <input type="date" name="data_nascimento" required><br>
-        Gênero: <input type="text" name="genero" required><br>
-        Endereço: <input type="text" name="endereco" required><br>
-        Telefone: <input type="number" name="telefone" required><br>
-        Email: <input type="email" name="email"><br>
-        Contato Emergencial: <input type="number" name="contato_emergencia"><br>
-        Escolaridade: <input type="text" name="escolaridade"><br>
-        Ocupação: <input type="text" name="ocupacao"><br>
-        Necessidade: <input type="text" name="necessidade"><br>
-        Aluno Responsável: <input type="text" name="estagiario" required><br>
-        Professor Supervisor: <input type="text" name="orientador" required><br>
-        RA do Aluno Responsável: <input type="number" name="ra" required><br>
-        <input type="submit" name="botao" value="Cadastrar">
-    </form>
+    <div class="container">
+        <h1>Cadastrar Paciente</h1>
+
+        <form action="#" method="post">
+            <label for="data_abertura">Data de Abertura:</label>
+            <input type="date" name="data_abertura" required>
+
+            <label for="nome">Nome Completo:</label>
+            <input type="text" name="nome" required>
+
+            <label for="data_nascimento">Data de Nascimento:</label>
+            <input type="date" name="data_nascimento" required>
+
+            <label for="genero">Gênero:</label>
+            <input type="text" name="genero" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" name="endereco" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="number" name="telefone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email">
+
+            <label for="contato_emergencia">Contato Emergencial:</label>
+            <input type="number" name="contato_emergencia">
+
+            <label for="escolaridade">Escolaridade:</label>
+            <input type="text" name="escolaridade">
+
+            <label for="ocupacao">Ocupação:</label>
+            <input type="text" name="ocupacao">
+
+            <label for="necessidade">Necessidade:</label>
+            <input type="text" name="necessidade">
+
+            <label for="estagiario">Aluno Responsável:</label>
+            <input type="text" name="estagiario" required>
+
+            <label for="orientador">Professor Supervisor:</label>
+            <input type="text" name="orientador" required>
+
+            <label for="ra">RA do Aluno Responsável:</label>
+            <input type="number" name="ra" required>
+
+            <button type="submit" name="botao" value="Cadastrar">Cadastrar</button>
+        </form>
+    </div>
 </body>
 </html>
-

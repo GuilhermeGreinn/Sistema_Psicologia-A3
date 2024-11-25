@@ -1,0 +1,259 @@
+/* Estilo para o fundo */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Estilo do container principal */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Caixa de login */
+.login-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    width: 320px;
+    padding: 20px 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Inputs e botões */
+.login-input {
+    width: calc(100% - 20px); /* Ajusta para encurtar as laterais */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-input::placeholder {
+    color: #aaa;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(20, 147, 220);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: rgb(17, 54, 71);
+}
+
+/* Estilo para os rótulos */
+label {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Estilo para o fundo */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Estilo da barra de navegação */
+.top-nav {
+    width: 100%;
+    background-image: linear-gradient(to left, rgb(20, 147, 220), rgb(17, 54, 71));
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 60px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.nav-links a.notification-btn, .nav-links a.user-btn {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-left: -5px;
+    margin-right: 10px;
+}
+
+.notification-btn img, .user-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo dos filtros (menu aluno) */
+.filter-container {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: rgba(20, 20, 20, 0.85);
+    border-radius: 8px;
+    width: 90%;
+    color: #fff;
+}
+
+.filter-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.name-filter {
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.name-filter input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.filter-item input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.filter-item input:focus {
+    outline: none;
+    border-color: rgb(20, 147, 220);
+}
+
+.filter-item button {
+    height: 34px;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    transition: background-color 0.3s;
+    margin-left: auto;
+}
+
+.filter-item button:hover {
+    background-color: rgba(20, 147, 220, 0.2);
+}
+
+/* Tabela (menu aluno) */
+.main-content {
+    width: 90%;
+    margin: 0 auto;
+    color: #333;
+}
+
+#list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#list-table tr {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#list-table tr:hover {
+    background-color: rgba(20, 147, 220, 0.2);
+}
+
+#list-table th, #list-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+#list-table th:first-child, #list-table td:first-child {
+    text-align: left;
+}
+
+#list-table th:last-child, #list-table td:last-child {
+    text-align: right;
+}
+
+#list-table th {
+    background-color: rgb(17, 54, 71);
+    color: white;
+}
