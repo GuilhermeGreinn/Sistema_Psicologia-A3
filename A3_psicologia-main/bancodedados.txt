@@ -100,7 +100,7 @@ CREATE TABLE paciente (
     paciente_id INT NOT NULL,
     presenca VARCHAR(100),
     observacoes TEXT,
-    FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE,
+    FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE
 );
 
     documentos VARCHAR(255),
