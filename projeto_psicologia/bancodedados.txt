@@ -1,0 +1,115 @@
+	cadastro professores:
+
+CREATE TABLE professor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cpf BIGINT UNIQUE NOT NULL,
+    telefone BIGINT NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nivel VARCHAR(9) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_prof_email CHECK (
+        email LIKE '%@gmail%' OR email LIKE '%@hotmail%'
+    )
+);
+
+
+	cadastro para alunos:
+
+CREATE TABLE aluno (
+    id INT(3) AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cpf BIGINT(11) UNIQUE NOT NULL,
+    ra BIGINT(9) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha INT (6) NOT NULL, -- Data de nascimento
+    telefone BIGINT(11) NOT NULL,
+    nivel VARCHAR(9) NOT NULL,
+    professor_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (professor_id) REFERENCES professor(id) ON DELETE CASCADE,
+    CONSTRAINT chk_aluno_email CHECK (
+        email LIKE '%@ulife.com.br'
+    )
+);
+
+
+
+    cadastro adm:
+
+CREATE TABLE adm (
+    id INT(3) AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nivel VARCHAR(9) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_adm_email CHECK (
+        email = 'ADM@ADM'
+    )
+);
+
+
+
+	cadastro de paciente:
+
+CREATE TABLE paciente (
+    id INT(3) AUTO_INCREMENT PRIMARY KEY,
+    data_abertura DATE NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    genero VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    telefone BIGINT(11) NOT NULL,
+    email VARCHAR(150) UNIQUE,
+    contato_emergencia BIGINT(11),
+    escolaridade VARCHAR(50),
+    ocupacao VARCHAR(50),
+    necessidade VARCHAR(255),
+    estagiario VARCHAR(255),
+    orientador VARCHAR(255),
+    aluno_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (aluno_id) REFERENCES aluno(id) ON DELETE CASCADE
+);
+
+
+    prontuario:
+
+	CREATE TABLE prontuario (
+    id INT(3) AUTO_INCREMENT PRIMARY KEY, 
+    id_paciente INT NOT NULL,
+    data_hora DATETIME NOT NULL,
+    avaliacao TEXT,
+    historico_familiar TEXT,
+    historico_social TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_paciente) REFERENCES paciente(id) ON DELETE CASCADE
+);
+
+
+
+    sessao:
+
+	CREATE TABLE sessao (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    paciente_id INT NOT NULL,
+    presenca VARCHAR(100),
+    observacoes TEXT,
+    data_horario DATETIME,
+    FOREIGN KEY (paciente_id) REFERENCES paciente(id) ON DELETE CASCADE
+);
+
+    documentos VARCHAR(255),
+
+
+	upload:
+	CREATE TABLE upload (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sessao_id INT NOT NULL,
+    nome_arquivo VARCHAR(255) NOT NULL,
+    caminho_arquivo VARCHAR(255) NOT NULL,
+    upload_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sessao_id) REFERENCES sessao(id) ON DELETE CASCADE
+);
